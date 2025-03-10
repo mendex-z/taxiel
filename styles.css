@@ -5,82 +5,22 @@ body {
     background-color: #f8f8f8;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.navstyle {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #8B0000; /* Qizil fon */
-    padding: 15px 20px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-/* Burger menyu - faqat mobil uchun */
-.burger {
-    font-size: 28px;
-    color: white;
-    cursor: pointer;
-    display: none;
-}
-
-/* Mobil qurilma uchun o‘zgartirish */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
-        background: #8B0000;
-        text-align: center;
-    }
-
-    .nav-links li {
-        margin: 15px 0;
-    }
-
-    .burger {
-        display: block;
-    }
-
-    .nav-active {
-        display: flex;
-    }
-}
-
-
 .logo-container {
     text-align:left;
+    
 }
+
+/* Umumiy logotip ko'rinishi */
 .logo-container img {
-    width: 80%;
-    max-width: 300px;
-    min-width: 350px;
+    width: 120px; /* Mobil qurilmalar uchun */
     height: auto;
+    margin-top: 0px; /* Mobil uchun margin-top */
 }
+
+/* Kompyuterlar uchun logotip kengligini o'zgartirish */
 @media (min-width: 1024px) {
     .logo-container img {
-        width: 150px;
+        width: 300px; /* Kompyuterlar uchun */
     }
 }
 
@@ -98,6 +38,31 @@ body {
       justify-content: center;
       align-items: center;
     }
+
+  }
+
+/* Yangi logotipning o'ng tomonga joylashishi va margin-top */
+.new-logo-container img {
+    width: 70px; /* Mobil qurilmalar uchun yangi logotip */
+    height: auto;
+    margin-top: -30px; /* Mobilda margin-top */
+    position: absolute;
+    right: 15px; /* Ekranning o'ng tomoniga joylashtirish */
+}
+
+/* Kompyuterlar uchun logotip kengligini o'zgartirish va margin-top */
+@media (min-width: 1024px) {
+    .logo-container img {
+        width: 300px; /* Kompyuterlar uchun */
+        margin-top: 30px; /* Desktop uchun margin-top */
+    }
+    
+    .new-logo-container img {
+        width: 150px; /* Kompyuterlar uchun yangi logotip */
+        margin-top: -60px; /* Desktopda margin-top */
+        right: 70px; /* Ekranning o'ng tomoniga joylashtirish */
+    }
+}
 
 nav {
     width: 100%;
