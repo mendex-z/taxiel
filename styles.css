@@ -5,15 +5,69 @@ body {
     background-color: #f8f8f8;
 }
 
-.navstyle {
-
-    display:inline-block;
-    align-items: center;
-    background-color: #ffd700;
-    padding: 15px 20px;
-    margin-left: 450px;
-    margin-top: 50px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+.navstyle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #8B0000; /* Qizil fon */
+    padding: 15px 20px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Burger menyu - faqat mobil uchun */
+.burger {
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Mobil qurilma uchun o‘zgartirish */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: #8B0000;
+        text-align: center;
+    }
+
+    .nav-links li {
+        margin: 15px 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    .nav-active {
+        display: flex;
+    }
+}
+
 
 .logo-container {
     text-align:left;
