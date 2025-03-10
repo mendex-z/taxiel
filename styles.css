@@ -7,14 +7,17 @@ body {
 
 .logo-container {
     text-align:left;
+    margin-left: 250px;
+    margin-top: -20px;
     
 }
 
 /* Umumiy logotip ko'rinishi */
 .logo-container img {
-    width: 120px; /* Mobil qurilmalar uchun */
+    width: 140px; /* Mobil qurilmalar uchun */
     height: auto;
-    margin-top: 0px; /* Mobil uchun margin-top */
+    margin-top: -10px; /* Mobil uchun margin-top */
+    margin-left: -250px;
 }
 
 /* Kompyuterlar uchun logotip kengligini o'zgartirish */
@@ -54,48 +57,115 @@ body {
 @media (min-width: 1024px) {
     .logo-container img {
         width: 300px; /* Kompyuterlar uchun */
-        margin-top: 30px; /* Desktop uchun margin-top */
+        margin-top: 40px; /* Desktop uchun margin-top */
     }
     
     .new-logo-container img {
         width: 150px; /* Kompyuterlar uchun yangi logotip */
-        margin-top: -60px; /* Desktopda margin-top */
+        margin-top: 30px; /* Desktopda margin-top */
         right: 70px; /* Ekranning o'ng tomoniga joylashtirish */
     }
 }
 
-nav {
-    width: 100%;
+.logomenu {
+
     display: flex;
-    justify-content: center;
+    margin-top: 50px;
+   
+    
+}
+/* Umumiy menyu dizayni */
+.navstyle {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    display: flex;
+    justify-content: space-between; /* Logotip va menyuni ajratish */
+    align-items: center;
+    background-color: #ffc800;
+    padding: 5px;
+    margin-left: 200px;
 }
 
-nav ul {
+/* Mobil qurilmalar uchun marginni yo'qotish va kenglikni to'liq qilish */
+@media (max-width: 1024px) {
+    .navstyle {
+        margin-left: -250px; /* Mobil qurilmada chapdan marginni olib tashlash */
+        padding: 20px; /* Mobil qurilmada paddingni ko'paytirish */
+    }
+}
+
+
+.nav-links {
+    display: flex;
     list-style: none;
-    display: flex;
-    gap: 20px;
+    margin: 0;
     padding: 0;
+    margin-left: 40px;
 }
 
-nav ul li {
-    display: inline;
+.nav-links li {
+    margin-right: 30px;
 }
 
-nav ul li a {
+.nav-links li a {
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
+    color: #000; /* Linkning rangi qora */
+    font-size: 18px;
+    transition: color 0.3s ease; /* Hover effekti uchun */
 }
 
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px;
+/* Hover effektini qo'shish */
+.nav-links li a:hover {
+    color: #8B0000; /* Hover paytida rangi o'zgaradi (masalan, qizil rangda) */
+}
+
+/* Kompyuterlar uchun menyu */
+@media (min-width: 1024px) {
+    .navstyle {
+        width: calc(100% - 300px); /* Menyuni chapdan 300px bo'sh joy qoldirish */
     }
-    nav ul {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
+
+    .nav-links {
+        display: flex;
     }
+
+    .burger {
+        display: none; /* Kompyuterlarda burger menyu ko'rsatilmaydi */
+    }
+}
+
+/* Mobil qurilmalar uchun menyu */
+@media (max-width: 1024px) {
+    .navstyle {
+        width: 100%; /* Mobilda butun ekranda joylashadi */
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: none; /* Mobilda menyu boshlanishida yashiringan */
+        flex-direction: column; /* Vertikal ro'yxat bo'lishi uchun */
+        width: 100%; /* Menyu kengligi */
+        padding: 20px 0;
+        top: 60px;
+        left: 0;
+        z-index: 1000;
+    }
+
+    .nav-links li {
+        text-align: left;
+        margin: 10px 0;
+        font-size: small;
+    }
+
+    .nav-links.active {
+        display:flex; /* Yangi ochilgan menyu */
+    }
+
+    .burger {
+        display: block; /* Mobilda burger menyu ko'rinadi */
+    }
+}
+
+/* Hover effektlari */
+.nav-links li a:hover {
+    color: #8B0000;
 }
