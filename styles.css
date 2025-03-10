@@ -16,7 +16,7 @@ body {
 .logo-container img {
     width: 140px; /* Mobil qurilmalar uchun */
     height: auto;
-    margin-top: -10px; /* Mobil uchun margin-top */
+    margin-top: -15px; /* Mobil uchun margin-top */
     margin-left: -250px;
 }
 
